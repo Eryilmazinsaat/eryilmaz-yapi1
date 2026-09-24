@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090b">
+<meta name="description" content="Eryılmaz İnşaat — Anahtar teslim yapı, çatı, demir, boya, sıva, seramik ve dış cephe uygulamaları.">
+<title>Eryılmaz İnşaat | Yapı & İnşaat</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap');
+
+:root{
+    --bg:#07090b;
+    --bg2:#0b0e12;
+    --panel:#101419;
+    --panel2:#14191f;
+    --gold:#c7a15a;
+    --gold2:#e4c57d;
+    --white:#f5f3ee;
+    --text:#c5c8cd;
+    --muted:#858b93;
+    --dark-muted:#626870;
+    --line:rgba(255,255,255,.085);
+    --green:#25d366;
+    --shadow:0 30px 90px rgba(0,0,0,.48);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Manrope',sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    z-index:9999;
+    top:0;
+    left:0;
+    width:100%;
+    height:84px;
+    transition:.35s ease;
+}
+
+header.scrolled{
+    background:rgba(7,9,11,.94);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--line);
+}
+
+.nav{
+    height:84px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.logo-symbol{
+    width:46px;
+    height:46px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(199,161,90,.7);
+    background:rgba(199,161,90,.035);
+}
+
+.logo-symbol:before{
+    content:"";
+    width:25px;
+    height:19px;
+    border:2px solid var(--gold);
+    border-bottom:0;
+    transform:translateY(5px);
+}
+
+.logo-symbol:after{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:15px;
+    background:var(--gold);
+    left:50%;
+    bottom:7px;
+    transform:translateX(-50%);
+}
+
+.logo-text strong{
+    display:block;
+    font-family:'Montserrat',sans-serif;
+    font-size:15px;
+    letter-spacing:2px;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--gold);
+    font-size:8px;
+    letter-spacing:3px;
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    color:#d4d6d9;
+    font-size:12px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--gold2);
+}
+
+.nav-call{
+    padding:11px 16px;
+    border:1px solid rgba(199,161,90,.5);
+    color:var(--gold2)!important;
+}
+
+.menu-btn{
+    display:none;
+    width:44px;
+    height:44px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:white;
+    font-size:21px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(90deg,rgba(3,5,7,.97),rgba(3,5,7,.83) 40%,rgba(3,5,7,.34)),
+        linear-gradient(0deg,rgba(3,5,7,.92),transparent 55%),
+        url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2200&q=90") center/cover;
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    opacity:.055;
+    background-image:
+        linear-gradient(rgba(255,255,255,.3) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.3) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+.hero-glow{
+    position:absolute;
+    right:-200px;
+    top:10%;
+    width:600px;
+    height:600px;
+    background:rgba(199,161,90,.08);
+    filter:blur(110px);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:810px;
+    padding-top:80px;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--gold2);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.eyebrow:before{
+    content:"";
+    width:38px;
+    height:1px;
+    background:var(--gold);
+}
+
+.hero h1{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(44px,7vw,84px);
+    line-height:.98;
+    letter-spacing:-4px;
+    margin-bottom:27px;
+}
+
+.hero h1 span{
+    color:var(--gold2);
+}
+
+.hero-description{
+    max-width:670px;
+    color:#b7bbc1;
+    line-height:1.85;
+    font-size:16px;
+    margin-bottom:34px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    min-height:51px;
+    padding:0 23px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid transparent;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.5px;
+    transition:.3s;
+}
+
+.btn-gold{
+    background:var(--gold);
+    color:#10100e;
+}
+
+.btn-gold:hover{
+    background:var(--gold2);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    background:rgba(255,255,255,.025);
+    border-color:rgba(255,255,255,.2);
+    color:#fff;
+}
+
+.btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold2);
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    border-top:1px solid rgba(255,255,255,.08);
+    background:rgba(4,6,8,.62);
+    backdrop-filter:blur(12px);
+}
+
+.hero-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.hero-stat{
+    padding:18px 24px;
+    border-right:1px solid rgba(255,255,255,.08);
+}
+
+.hero-stat:last-child{
+    border-right:0;
+}
+
+.hero-stat strong{
+    display:block;
+    color:var(--gold2);
+    font-family:'Montserrat',sans-serif;
+    font-size:13px;
+    margin-bottom:4px;
+}
+
+.hero-stat span{
+    color:#858a91;
+    font-size:9px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:115px 0;
+}
+
+.section-label{
+    color:var(--gold);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+
+.section-title{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(31px,4vw,51px);
+    line-height:1.08;
+    letter-spacing:-2.5px;
+}
+
+.gold{
+    color:var(--gold2);
+}
+
+.section-text{
+    color:var(--muted);
+    line-height:1.85;
+    max-width:700px;
+    margin-top:18px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:
+        radial-gradient(circle at 0 50%,rgba(199,161,90,.055),transparent 30%),
+        var(--bg2);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:75px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:540px;
+    position:relative;
+    background:
+        linear-gradient(0deg,rgba(0,0,0,.55),transparent),
+        url("https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=85") center/cover;
+    box-shadow:var(--shadow);
+}
+
+.about-image:after{
+    content:"";
+    position:absolute;
+    inset:20px;
+    border:1px solid rgba(199,161,90,.4);
+}
+
+.about-badge{
+    position:absolute;
+    z-index:2;
+    left:25px;
+    bottom:25px;
+    padding:18px 22px;
+    background:rgba(7,9,11,.92);
+    border-left:3px solid var(--gold);
+}
+
+.about-badge strong{
+    display:block;
+    font-family:'Montserrat',sans-serif;
+    font-size:25px;
+    color:var(--gold2);
+}
+
+.about-badge span{
+    color:#888e95;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.about-copy p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:19px;
+}
+
+.about-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
+    margin-top:29px;
+}
+
+.point{
+    padding:17px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.02);
+}
+
+.point strong{
+    display:block;
+    color:#e5e6e7;
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.point span{
+    color:#747a82;
+    font-size:9px;
+    line-height:1.6;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:#080a0d;
+}
+
+.section-head{
+    margin-bottom:53px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.service-card{
+    min-height:215px;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:linear-gradient(145deg,#13171c,#0d1014);
+    transition:.35s;
+}
+
+.service-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(199,161,90,.5);
+    box-shadow:0 22px 50px rgba(0,0,0,.32);
+}
+
+.service-number{
+    color:rgba(199,161,90,.35);
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:30px;
+}
+
+.service-icon{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(199,161,90,.4);
+    color:var(--gold2);
+    margin-bottom:19px;
+}
+
+.service-card h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:16px;
+    margin-bottom:9px;
+}
+
+.service-card p{
+    color:#81868e;
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* =========================
+   FEATURE
+========================= */
+
+.feature{
+    padding:0;
+}
+
+.feature-inner{
+    min-height:450px;
+    display:flex;
+    align-items:center;
+    padding:65px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(90deg,rgba(5,7,9,.96),rgba(5,7,9,.65),rgba(5,7,9,.18)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=90") center/cover;
+}
+
+.feature-inner:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:1px solid rgba(199,161,90,.28);
+}
+
+.feature-content{
+    position:relative;
+    z-index:2;
+    max-width:680px;
+}
+
+.feature-content h2{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(34px,5vw,62px);
+    line-height:1;
+    letter-spacing:-3px;
+    margin:13px 0 20px;
+}
+
+.feature-content p{
+    color:#b5bac0;
+    line-height:1.8;
+    max-width:600px;
+    margin-bottom:25px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+    background:var(--bg2);
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:1.35fr 1fr 1fr;
+    grid-template-rows:280px 280px;
+    gap:15px;
+}
+
+.project{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+}
+
+.project:nth-child(1){
+    grid-row:span 2;
+}
+
+.project img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+    filter:saturate(.78);
+}
+
+.project:hover img{
+    transform:scale(1.07);
+    filter:saturate(1);
+}
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:25px;
+    background:linear-gradient(transparent 30%,rgba(0,0,0,.92));
+}
+
+.project-overlay span{
+    color:var(--gold2);
+    font-size:8px;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.project-overlay h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:17px;
+}
+
+/* =========================
+   SUPPORT
+========================= */
+
+.support{
+    background:
+        radial-gradient(circle at 85% 15%,rgba(199,161,90,.09),transparent 30%),
+        #090b0e;
+}
+
+.support-box{
+    padding:58px;
+    background:
+        linear-gradient(135deg,rgba(199,161,90,.05),transparent 45%),
+        #101419;
+    border:1px solid rgba(199,161,90,.25);
+    box-shadow:var(--shadow);
+}
+
+.support-top{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:60px;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.support-intro p{
+    color:#999fa7;
+    line-height:1.85;
+    margin-top:18px;
+    max-width:690px;
+}
+
+.support-notice{
+    padding:20px;
+    border-left:2px solid var(--gold);
+    background:rgba(199,161,90,.045);
+}
+
+.support-notice strong{
+    display:block;
+    color:var(--gold2);
+    font-size:10px;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.support-notice span{
+    color:#999fa6;
+    font-size:10px;
+    line-height:1.75;
+}
+
+.bank-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.bank-card{
+    padding:30px;
+    background:#0b0e12;
+    border:1px solid var(--line);
+    transition:.3s;
+}
+
+.bank-card:hover{
+    border-color:rgba(199,161,90,.45);
+    transform:translateY(-3px);
+}
+
+.bank-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:26px;
+}
+
+.bank-brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.bank-logo{
+    width:58px;
+    height:58px;
+    border-radius:10px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px;
+    overflow:hidden;
+}
+
+.bank-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.bank-name{
+    font-family:'Montserrat',sans-serif;
+    font-size:13px;
+    font-weight:800;
+}
+
+.bank-type{
+    color:#717780;
+    font-size:8px;
+    margin-top:4px;
+    letter-spacing:1px;
+}
+
+.iban-label{
+    color:#717780;
+    font-size:8px;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.iban{
+    padding:15px;
+    margin-bottom:13px;
+    border:1px solid rgba(255,255,255,.07);
+    background:#15191e;
+    color:#f0f0ee;
+    font-family:monospace;
+    font-size:13px;
+    letter-spacing:.3px;
+    word-break:break-all;
+}
+
+.bank-owner{
+    color:#8c9299;
+    font-size:10px;
+    margin-bottom:17px;
+}
+
+.bank-owner strong{
+    color:#dedfe0;
+}
+
+.copy-btn{
+    width:100%;
+    min-height:44px;
+    border:1px solid rgba(199,161,90,.35);
+    background:rgba(199,161,90,.06);
+    color:var(--gold2);
+    cursor:pointer;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    transition:.25s;
+}
+
+.copy-btn:hover{
+    background:var(--gold);
+    color:#10100e;
+}
+
+.transfer-info{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-top:18px;
+    padding:17px;
+    border:1px solid rgba(37,211,102,.13);
+    background:rgba(37,211,102,.035);
+}
+
+.transfer-icon{
+    width:31px;
+    height:31px;
+    flex-shrink:0;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:#69e493;
+    background:rgba(37,211,102,.1);
+}
+
+.transfer-info div{
+    color:#9fa4aa;
+    font-size:10px;
+    line-height:1.65;
+}
+
+.transfer-info strong{
+    color:#e8e9e9;
+}
+
+.support-footer{
+    margin-top:25px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.support-footer p{
+    color:#686e76;
+    font-size:8px;
+    line-height:1.8;
+    max-width:760px;
+}
+
+.support-secure{
+    color:#858a91;
+    font-size:8px;
+    white-space:nowrap;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#07090b;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.contact-card,
+.whatsapp-box{
+    padding:38px;
+    border:1px solid var(--line);
+    background:linear-gradient(145deg,#12161b,#0d1014);
+}
+
+.contact-card h3,
+.whatsapp-box h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.contact-card > p,
+.whatsapp-box p{
+    color:#858b93;
+    font-size:11px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.contact-list{
+    display:grid;
+    gap:10px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:15px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.02);
+    transition:.25s;
+}
+
+.contact-item:hover{
+    border-color:rgba(199,161,90,.35);
+}
+
+.contact-icon{
+    width:39px;
+    height:39px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(199,161,90,.3);
+    color:var(--gold2);
+    flex-shrink:0;
+}
+
+.contact-item small{
+    display:block;
+    color:#666d75;
+    font-size:7px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:4px;
+}
+
+.contact-item strong{
+    font-size:11px;
+}
+
+.whatsapp-box{
+    border-color:rgba(37,211,102,.18);
+    background:
+        radial-gradient(circle at 100% 0,rgba(37,211,102,.07),transparent 40%),
+        #0e1311;
+}
+
+.whatsapp-btn{
+    width:max-content;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 20px;
+    background:var(--green);
+    color:#061008;
+    font-size:10px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 35px rgba(37,211,102,.16);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#040506;
+    border-top:1px solid var(--line);
+}
+
+.footer-main{
+    padding:55px 0 42px;
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:45px;
+}
+
+.footer-company{
+    max-width:330px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:17px;
+}
+
+.footer-logo-mark{
+    width:39px;
+    height:39px;
+    border:1px solid rgba(199,161,90,.55);
+    display:grid;
+    place-items:center;
+    color:var(--gold2);
+    font-family:'Montserrat',sans-serif;
+    font-size:11px;
+}
+
+.footer-logo strong{
+    display:block;
+    font-family:'Montserrat',sans-serif;
+    font-size:13px;
+    letter-spacing:1.5px;
+}
+
+.footer-company p{
+    color:#666c73;
+    font-size:9px;
+    line-height:1.8;
+}
+
+.footer-column h4{
+    color:#d7d8da;
+    font-size:10px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:17px;
+}
+
+.footer-column a{
+    display:block;
+    color:#6f757d;
+    font-size:9px;
+    margin-bottom:11px;
+    transition:.2s;
+}
+
+.footer-column a:hover{
+    color:var(--gold2);
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.06);
+    padding:19px 0;
+}
+
+.footer-bottom-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.copyright{
+    color:#555b62;
+    font-size:8px;
+}
+
+.legal{
+    display:flex;
+    gap:18px;
+}
+
+.legal a{
+    color:#555b62;
+    font-size:8px;
+}
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.floating-wa{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:9000;
+    width:57px;
+    height:57px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--green);
+    color:#061008;
+    font-size:23px;
+    box-shadow:0 12px 35px rgba(0,0,0,.45);
+    transition:.3s;
+}
+
+.floating-wa:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    z-index:10000;
+    left:50%;
+    bottom:28px;
+    transform:translate(-50%,140px);
+    padding:14px 22px;
+    background:#e9e6de;
+    color:#101113;
+    font-size:10px;
+    font-weight:800;
+    box-shadow:0 15px 45px rgba(0,0,0,.4);
+    transition:.35s;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        position:fixed;
+        top:84px;
+        left:0;
+        width:100%;
+        padding:25px 6%;
+        background:rgba(7,9,11,.98);
+        backdrop-filter:blur(20px);
+        border-bottom:1px solid var(--line);
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:19px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-call{
+        width:100%;
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .about-grid,
+    .support-top{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .bank-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:80px 0;
+    }
+
+    .hero{
+        min-height:850px;
+        background:
+            linear-gradient(90deg,rgba(3,5,7,.93),rgba(3,5,7,.66)),
+            url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=85") center/cover;
+    }
+
+    .hero h1{
+        letter-spacing:-2.5px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .hero-stats{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .hero-stat{
+        padding:13px 8px;
+    }
+
+    .hero-stat strong{
+        font-size:9px;
+    }
+
+    .hero-stat span{
+        font-size:7px;
+    }
+
+    .about-image{
+        min-height:390px;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:260px 220px 220px 220px 220px;
+    }
+
+    .project:nth-child(1){
+        grid-row:span 1;
+    }
+
+    .feature-inner{
+        min-height:470px;
+        padding:35px 25px;
+    }
+
+    .support-box{
+        padding:30px 18px;
+    }
+
+    .support-footer{
+        flex-direction:column;
+    }
+
+    .support-secure{
+        white-space:normal;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-bottom-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .floating-wa{
+        right:15px;
+        bottom:15px;
+        width:52px;
+        height:52px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+
+<div class="container nav">
+
+<a href="#anasayfa" class="logo">
+
+<div class="logo-symbol"></div>
+
+<div class="logo-text">
+<strong>ERYILMAZ İNŞAAT</strong>
+<span>YAPI • PROJE • UYGULAMA</span>
+</div>
+
+</a>
+
+<nav class="nav-links" id="navLinks">
+<a href="#anasayfa">Ana Sayfa</a>
+<a href="#hakkimizda">Kurumsal</a>
+<a href="#hizmetler">Hizmetler</a>
+<a href="#projeler">Projeler</a>
+<a href="#destek">Destek</a>
+<a href="#iletisim" class="nav-call">İletişim</a>
+</nav>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="anasayfa">
+
+<div class="hero-grid"></div>
+<div class="hero-glow"></div>
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+ERYILMAZ İNŞAAT
+</div>
+
+<h1>
+Güvenle inşa edilen
+<span>yarınlar.</span>
+</h1>
+
+<p class="hero-description">
+Anahtar teslim yapı çözümlerinden çatı, demir, boya, sıva,
+seramik ve dış cephe uygulamalarına kadar; yapı sürecinin
+farklı aşamalarında kaliteli ve çözüm odaklı hizmet anlayışı.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#hizmetler" class="btn btn-gold">
+HİZMETLERİMİZ
+</a>
+
+<a
+href="https://wa.me/905455408617?text=Merhaba%20Eryilmaz%20İnşaat%2C%20projem%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="btn btn-outline">
+WHATSAPP'TAN İLETİŞİME GEÇ
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-bottom">
+
+<div class="container hero-stats">
+
+<div class="hero-stat">
+<strong>ANAHTAR TESLİM</strong>
+<span>Proje ve uygulama çözümleri</span>
+</div>
+
+<div class="hero-stat">
+<strong>USTALIK</strong>
+<span>Detay odaklı çalışma</span>
+</div>
+
+<div class="hero-stat">
+<strong>GÜVEN</strong>
+<span>Şeffaf iletişim anlayışı</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="hakkimizda">
+
+<div class="container about-grid">
+
+<div class="about-image">
+
+<div class="about-badge">
+<strong>ERYILMAZ</strong>
+<span>YAPI & İNŞAAT</span>
+</div>
+
+</div>
+
+<div class="about-copy">
+
+<div class="section-label">Kurumsal</div>
+
+<h2 class="section-title">
+Sağlam yapılar,
+<span class="gold">güvenilir hizmet.</span>
+</h2>
+
+<p>
+Eryılmaz İnşaat olarak yapı ve uygulama alanında güven,
+kalite ve sorumluluk anlayışını merkeze alıyoruz.
+</p>
+
+<p>
+Temelden çatıya, iç mekandan dış cepheye kadar farklı
+uygulama alanlarında ihtiyaçlara uygun çözümler sunmayı
+ve her projede işçiliğin detaylarına önem vermeyi hedefliyoruz.
+</p>
+
+<div class="about-points">
+
+<div class="point">
+<strong>01 — Güvenilirlik</strong>
+<span>Açık iletişim ve sorumluluk bilinci.</span>
+</div>
+
+<div class="point">
+<strong>02 — Kaliteli İşçilik</strong>
+<span>Detaylara önem veren uygulama yaklaşımı.</span>
+</div>
+
+<div class="point">
+<strong>03 — Çözüm Odaklılık</strong>
+<span>Projenin ihtiyacına uygun çözümler.</span>
+</div>
+
+<div class="point">
+<strong>04 — Anahtar Teslim</strong>
+<span>Farklı yapı aşamalarını tek çatı altında.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="hizmetler">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">Hizmetlerimiz</div>
+
+<h2 class="section-title">
+Yapının her aşamasında
+<span class="gold">çözüm.</span>
+</h2>
+
+<p class="section-text">
+İnşaat ve yapı uygulamalarında farklı ihtiyaçlara yönelik
+profesyonel hizmet seçenekleri.
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<div class="service-number">01 / CONSTRUCTION</div>
+<div class="service-icon">⌂</div>
+<h3>Anahtar Teslim İnşaat</h3>
+<p>Projenin farklı aşamalarını planlayarak kapsamlı yapı çözümleri.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">02 / ROOF</div>
+<div class="service-icon">⌂</div>
+<h3>Çatı & Kiremit</h3>
+<p>Çatı yapımı, yenileme, bakım, onarım ve kiremit uygulamaları.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">03 / STEEL</div>
+<div class="service-icon">▦</div>
+<h3>Demir İşleri</h3>
+<p>Yapı ihtiyaçlarına uygun demir ve metal uygulamaları.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">04 / INTERIOR</div>
+<div class="service-icon">▧</div>
+<h3>Alçı & Sıva</h3>
+<p>İç ve dış yüzeylerde düzgün ve dayanıklı uygulamalar.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">05 / PAINT</div>
+<div class="service-icon">◐</div>
+<h3>Boya & Dekorasyon</h3>
+<p>İç mekan, dış cephe ve dekoratif boya uygulamaları.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">06 / CERAMIC</div>
+<div class="service-icon">◇</div>
+<h3>Seramik</h3>
+<p>Zemin ve duvarlarda seramik ve kaplama uygulamaları.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">07 / EXTERIOR</div>
+<div class="service-icon">▥</div>
+<h3>Dış Cephe</h3>
+<p>Dış cephe boya ve çeşitli yapı yüzeyi uygulamaları.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">08 / RENOVATION</div>
+<div class="service-icon">↻</div>
+<h3>Tadilat & Yenileme</h3>
+<p>Mevcut yapıların ihtiyaçlara göre yenilenmesi ve düzenlenmesi.</p>
+</div>
+
+<div class="service-card">
+<div class="service-number">09 / COMPLETE</div>
+<div class="service-icon">✦</div>
+<h3>Kapsamlı Yapı Hizmeti</h3>
+<p>İhtiyaca göre farklı uygulamaların birlikte planlanması.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURE -->
+
+<section class="feature">
+
+<div class="container">
+
+<div class="feature-inner">
+
+<div class="feature-content">
+
+<div class="section-label">
+ANAHTAR TESLİM
+</div>
+
+<h2>
+Bir fikirden
+<span class="gold">gerçek bir yapıya.</span>
+</h2>
+
+<p>
+Projenizin ihtiyaçlarını dinliyor, uygulama aşamalarını
+planlıyor ve yapı sürecinin detaylarını titizlikle ele alıyoruz.
+</p>
+
+<a href="#iletisim" class="btn btn-gold">
+PROJENİZİ KONUŞALIM
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projeler">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">Projeler</div>
+
+<h2 class="section-title">
+İşimizin arkasında
+<span class="gold">emeğimiz var.</span>
+</h2>
+
+<p class="section-text">
+Yapı ve uygulama çalışmalarımızdan seçilmiş görseller.
+</p>
+
+</div>
+
+<div class="project-grid">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85" alt="Modern yapı">
+<div class="project-overlay">
+<span>01 / YAPI</span>
+<h3>Modern Konut</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85" alt="Villa">
+<div class="project-overlay">
+<span>02 / PROJE</span>
+<h3>Villa Uygulaması</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="İç mekan">
+<div class="project-overlay">
+<span>03 / İÇ MEKAN</span>
+<h3>İç Mekan Çalışması</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=85" alt="Dekorasyon">
+<div class="project-overlay">
+<span>04 / DEKORASYON</span>
+<h3>İç Dekorasyon</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85" alt="İnşaat">
+<div class="project-overlay">
+<span>05 / İNŞAAT</span>
+<h3>Yapı Uygulaması</h3>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SUPPORT -->
+
+<section class="support" id="destek">
+
+<div class="container">
+
+<div class="support-box">
+
+<div class="support-top">
+
+<div class="support-intro">
+
+<div class="section-label">
+Destek & Katkı
+</div>
+
+<h2 class="section-title">
+Projelerimize
+<span class="gold">katkıda bulunun.</span>
+</h2>
+
+<p>
+Eryılmaz İnşaat olarak sosyal sorumluluk çalışmalarımızın,
+ihtiyaç sahiplerine yönelik destek faaliyetlerimizin ve
+topluma fayda sağlamayı amaçlayan çalışmalarımızın
+sürdürülebilmesine katkıda bulunmak isteyen kişi ve
+kurumların gönüllü desteklerini önemsiyoruz.
+</p>
+
+</div>
+
+<div class="support-notice">
+
+<strong>ŞEFFAF DESTEK BİLGİLENDİRMESİ</strong>
+
+<span>
+Destekler gönüllülük esasına dayanır. Para transferi
+gerçekleştirmeden önce hesap sahibi ve IBAN bilgilerinin
+doğruluğunu kontrol ediniz.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="bank-grid">
+
+
+<!-- İŞ BANKASI -->
+
+<div class="bank-card">
+
+<div class="bank-head">
+
+<div class="bank-brand">
+
+<div class="bank-logo">
+
+<img
+src="https://cdn.simpleicons.org/isbankasi"
+alt="Türkiye İş Bankası"
+onerror="this.style.display='none';this.parentElement.innerHTML='<strong style=&quot;color:#123d8c;font-size:10px;text-align:center&quot;>İŞ BANKASI</strong>';"
+>
+
+</div>
+
+<div>
+
+<div class="bank-name">
+Türkiye İş Bankası
+</div>
+
+<div class="bank-type">
+İŞCEP / BANKA HESABI
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="iban-label">
+IBAN NUMARASI
+</div>
+
+<div class="iban">
+TR96 0006 4000 0013 6211 7614 92
+</div>
+
+<div class="bank-owner">
+Hesap Sahibi:
+<strong>Baran Eryilmaz</strong>
+</div>
+
+<button
+class="copy-btn"
+onclick="copyIBAN('TR960006400000136211761492')">
+IBAN'I KOPYALA
+</button>
+
+</div>
+
+
+<!-- GARANTİ BBVA -->
+
+<div class="bank-card">
+
+<div class="bank-head">
+
+<div class="bank-brand">
+
+<div class="bank-logo">
+
+<img
+src="https://cdn.simpleicons.org/garantibbva"
+alt="Garanti BBVA"
+onerror="this.style.display='none';this.parentElement.innerHTML='<strong style=&quot;color:#008d42;font-size:10px;text-align:center&quot;>GARANTİ BBVA</strong>';"
+>
+
+</div>
+
+<div>
+
+<div class="bank-name">
+Garanti BBVA
+</div>
+
+<div class="bank-type">
+BANKA HESABI
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="iban-label">
+IBAN NUMARASI
+</div>
+
+<div class="iban">
+TR34 0006 2001 2310 0006 6348 65
+</div>
+
+<div class="bank-owner">
+Hesap Sahibi:
+<strong>Baran Eryilmaz</strong>
+</div>
+
+<button
+class="copy-btn"
+onclick="copyIBAN('TR340006200123100006634865')">
+IBAN'I KOPYALA
+</button>
+
+</div>
+
+</div>
+
+
+<div class="transfer-info">
+
+<div class="transfer-icon">
+✓
+</div>
+
+<div>
+Para transferi sırasında açıklama bölümüne
+<strong>“Eryilmaz İnşaat Bağış”</strong>
+yazmanızı rica ederiz.
+</div>
+
+</div>
+
+
+<div class="support-footer">
+
+<p>
+Destek göndermeden önce banka ve hesap bilgilerinin
+doğruluğunu kontrol ediniz. Bankacılık işlemleri ilgili
+banka kanalları üzerinden gerçekleştirilir. Desteklerin
+kullanım amacı ve kapsamı hakkında bilgi almak için
+bizimle iletişime geçebilirsiniz.
+</p>
+
+<div class="support-secure">
+✓ BİLGİLENDİRME PANELİ
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="iletisim">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">İletişim</div>
+
+<h2 class="section-title">
+Eryılmaz İnşaat ile
+<span class="gold">iletişime geçin.</span>
+</h2>
+
+<p class="section-text">
+Projeniz, anahtar teslim çalışmalarınız veya yapı uygulamalarınız
+hakkında bilgi almak için bizimle doğrudan iletişime geçebilirsiniz.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>İletişim Bilgileri</h3>
+
+<p>
+Eryılmaz İnşaat hakkında bilgi almak ve projenizi görüşmek
+için aşağıdaki iletişim kanallarını kullanabilirsiniz.
+</p>
+
+<div class="contact-list">
+
+<a href="tel:+905455408617" class="contact-item">
+
+<div class="contact-icon">☎</div>
+
+<div>
+<small>Telefon</small>
+<strong>0545 540 86 17</strong>
+</div>
+
+</a>
+
+<a
+href="https://wa.me/905455408617?text=Merhaba%20Eryilmaz%20İnşaat%2C%20projem%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="contact-item">
+
+<div class="contact-icon">◉</div>
+
+<div>
+<small>WhatsApp</small>
+<strong>0545 540 86 17</strong>
+</div>
+
+</a>
+
+<a
+href="mailto:eryilmazinsaat48@gmail.com"
+class="contact-item">
+
+<div class="contact-icon">@</div>
+
+<div>
+<small>E-posta</small>
+<strong>eryilmazinsaat48@gmail.com</strong>
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="whatsapp-box">
+
+<div class="section-label">
+Hızlı İletişim
+</div>
+
+<h3>
+WhatsApp üzerinden
+<span class="gold">ulaşın.</span>
+</h3>
+
+<p>
+Yapılacak iş hakkında kısaca bilgi vererek,
+fotoğraf veya proje detaylarını WhatsApp üzerinden
+bizimle paylaşabilirsiniz.
+</p>
+
+<a
+href="https://wa.me/905455408617?text=Merhaba%20Eryilmaz%20İnşaat%2C%20projem%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="whatsapp-btn">
+
+<span>◉</span>
+WHATSAPP'TAN MESAJ GÖNDER
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     CORPORATE FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-main">
+
+<div class="footer-company">
+
+<div class="footer-logo">
+
+<div class="footer-logo-mark">
+EY
+</div>
+
+<div>
+<strong>ERYILMAZ İNŞAAT</strong>
+</div>
+
+</div>
+
+<p>
+Eryılmaz İnşaat; anahtar teslim yapı, çatı,
+demir, boya, sıva, seramik, dış cephe ve
+tadilat uygulamalarında çözüm odaklı hizmet
+anlayışıyla çalışmalarını sürdürmektedir.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Kurumsal</h4>
+
+<a href="#hakkimizda">Hakkımızda</a>
+<a href="#hizmetler">Hizmetlerimiz</a>
+<a href="#projeler">Projelerimiz</a>
+<a href="#iletisim">İletişim</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Hizmetler</h4>
+
+<a href="#hizmetler">Anahtar Teslim</a>
+<a href="#hizmetler">Çatı & Kiremit</a>
+<a href="#hizmetler">Demir İşleri</a>
+<a href="#hizmetler">Boya & Dekorasyon</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>İletişim</h4>
+
+<a href="tel:+905455408617">
+0545 540 86 17
+</a>
+
+<a href="mailto:eryilmazinsaat48@gmail.com">
+eryilmazinsaat48@gmail.com
+</a>
+
+<a href="https://wa.me/905455408617" target="_blank">
+WhatsApp
+</a>
+
+<a href="#destek">
+Destek & Katkı
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div class="container footer-bottom-inner">
+
+<div class="copyright">
+© <span id="year"></span> <strong>Eryılmaz İnşaat</strong> — Tüm hakları saklıdır.
+</div>
+
+<div class="legal">
+<a href="#hakkimizda">Kurumsal</a>
+<a href="#destek">Destek Bilgilendirmesi</a>
+<a href="#iletisim">İletişim</a>
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/905455408617?text=Merhaba%20Eryilmaz%20İnşaat%2C%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="floating-wa"
+aria-label="WhatsApp">
+◉
+</a>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+IBAN başarıyla kopyalandı.
+</div>
+
+
+<script>
+
+/* HEADER */
+
+const header=document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>50){
+header.classList.add("scrolled");
+}else{
+header.classList.remove("scrolled");
+}
+
+});
+
+
+/* MOBILE MENU */
+
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+
+navLinks.classList.toggle("open");
+
+menuBtn.textContent=
+navLinks.classList.contains("open") ? "✕" : "☰";
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+navLinks.classList.remove("open");
+menuBtn.textContent="☰";
+
+});
+
+});
+
+
+/* IBAN COPY */
+
+function copyIBAN(iban){
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(iban)
+.then(showToast)
+.catch(()=>fallbackCopy(iban));
+
+}else{
+
+fallbackCopy(iban);
+
+}
+
+}
+
+
+function fallbackCopy(text){
+
+const area=document.createElement("textarea");
+
+area.value=text;
+
+document.body.appendChild(area);
+
+area.select();
+
+try{
+
+document.execCommand("copy");
+showToast();
+
+}catch(e){
+
+alert("IBAN: "+text);
+
+}
+
+document.body.removeChild(area);
+
+}
+
+
+/* TOAST */
+
+let toastTimer;
+
+function showToast(){
+
+const toast=document.getElementById("toast");
+
+toast.classList.add("show");
+
+clearTimeout(toastTimer);
+
+toastTimer=setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2500);
+
+}
+
+
+/* YEAR */
+
+document.getElementById("year").textContent=
+new Date().getFullYear();
+
+
+/* REVEAL */
+
+const elements=document.querySelectorAll(
+".service-card,.project,.point,.bank-card,.contact-card,.whatsapp-box"
+);
+
+const observer=new IntersectionObserver(
+entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+{threshold:.12}
+);
+
+
+elements.forEach(el=>{
+
+el.style.opacity="0";
+el.style.transform="translateY(25px)";
+el.style.transition="opacity .7s ease,transform .7s ease";
+
+observer.observe(el);
+
+});
+
+</script>
+
+</body>
+  </html>
